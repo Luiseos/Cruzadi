@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{37E4E5DD-BB8A-4EC6-9E45-980F93A49367}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>APPCRUZADI</RootNamespace>
+    <AssemblyName>APPCRUZADI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>APPCRUZADI.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>APPCRUZADI.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formas\Backupyrespaldo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\AdminLTE.css" />
+    <Content Include="Formas\CC\BuscarCXC.aspx" />
+    <Content Include="Formas\CC\BusquedaCLienteArpon.aspx" />
+    <Content Include="Formas\CC\ParametrosComiCC.aspx" />
+    <Content Include="Formas\CC\TIpoGestionCC.aspx" />
+    <Content Include="Formas\CC\VisualizaciondeGestiones.aspx" />
+    <Content Include="Formas\Ejecutiva\CrearEjecutiva.aspx" />
+    <Content Include="Formas\Ejecutiva\ParametrosComiVentas.aspx" />
+    <Content Include="Formas\FormaPago\BuscarFacturas.aspx" />
+    <Content Include="Formas\FormaPago\Pagos.aspx" />
+    <Content Include="Formas\FormaPago\TipoPago.aspx" />
+    <Content Include="Formas\FormaPago\TipoPOS.aspx" />
+    <Content Include="Formas\IT\CrearSolicitud.aspx" />
+    <Content Include="Formas\IT\EstadoIT.aspx" />
+    <Content Include="Formas\IT\GestionIT.aspx" />
+    <Content Include="Formas\IT\HistorialIT.aspx" />
+    <Content Include="Formas\IT\RespuestaIT.aspx" />
+    <Content Include="Formas\Login\Perfil\CambiarContraseña.aspx" />
+    <Content Include="CSS\4.1.3bootstrap.min.css" />
+    <Content Include="CSS\bootstrap.min.js" />
+    <Content Include="CSS\Sesion.css" />
+    <Content Include="Formas\CC\AgregarCLientes.aspx" />
+    <Content Include="Formas\CC\GestionCC.aspx" />
+    <Content Include="Formas\CC\ComisionesCC.aspx" />
+    <Content Include="Formas\Ejecutiva\ComisionesV.aspx" />
+    <Content Include="Formas\IT\ITPrincipal.aspx" />
+    <Content Include="Formas\Login\CambioContraPreg.aspx" />
+    <Content Include="Formas\Login\Perfil\ConfiguracionPregunta.aspx" />
+    <Content Include="Formas\Mantenimiento\GestionUsuario.aspx" />
+    <Content Include="Formas\Mantenimiento\RegistroUsuario.aspx" />
+    <Content Include="Formas\Mantenimiento\CreacionObjetos.aspx" />
+    <Content Include="Formas\Mantenimiento\CreacionPregunta.aspx" />
+    <Content Include="Formas\Mantenimiento\CreacionParametros.aspx" />
+    <Content Include="Formas\Login\RecuperacionViaCorreo.aspx" />
+    <Content Include="Formas\Login\RecuperacionViaPregunta.aspx" />
+    <Content Include="Formas\Mantenimiento\CreacionRoles.aspx" />
+    <Content Include="Formas\Reportes\FACTURAS_CLIENTES.aspx" />
+    <Content Include="Formas\Reportes\REPORTE_RPT.aspx" />
+    <Content Include="Imagenes\1.jpeg" />
+    <Content Include="Imagenes\2.jpeg" />
+    <Content Include="Imagenes\3.jpeg" />
+    <Content Include="Imagenes\4.jpeg" />
+    <Content Include="Imagenes\5.jpeg" />
+    <Content Include="Imagenes\6.jpeg" />
+    <Content Include="Imagenes\7.jpeg" />
+    <Content Include="Imagenes\8.jpeg" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="Formas\CC\ModificarCliente.aspx" />
+    <Content Include="Formas\WebForm4.aspx" />
+    <Content Include="CSS\bootstrap-grid.css" />
+    <Content Include="CSS\bootstrap-grid.min.css" />
+    <Content Include="CSS\bootstrap-reboot.css" />
+    <Content Include="CSS\bootstrap-reboot.min.css" />
+    <Content Include="CSS\bootstrap.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="JS\4.1.3bootstrap.min.js" />
+    <Content Include="JS\bootstrap.bundle.js" />
+    <Content Include="JS\bootstrap.bundle.min.js" />
+    <Content Include="JS\bootstrap.js" />
+    <Content Include="JS\3.3.7bootstrap.min.js" />
+    <Content Include="JS\Jquery3.2.1.js" />
+    <Content Include="JS\Jquery3.3.1.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Formas\Login\Pregunta_seguridad.aspx" />
+    <Content Include="Formas\Login\RecuperarContraseña.aspx" />
+    <Content Include="Formas\Login\Registro.aspx" />
+    <Content Include="Formas\Mantenimiento\RolesPermisos.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="W3\cruzadi.jpg" />
+    <Content Include="W3\fonts.googleapis.lato.css" />
+    <Content Include="W3\fonts.googleapis.monserrat.css" />
+    <Content Include="W3\W3.CSS" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\Conexion.vb" />
+    <Compile Include="App_Data\Encriptacion.vb" />
+    <Compile Include="App_Data\ConsultasGenerales.vb" />
+    <Compile Include="App_Data\EnvioCorreo.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\BuscarCXC.aspx.designer.vb">
+      <DependentUpon>BuscarCXC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\BuscarCXC.aspx.vb">
+      <DependentUpon>BuscarCXC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\BusquedaCLienteArpon.aspx.designer.vb">
+      <DependentUpon>BusquedaCLienteArpon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\BusquedaCLienteArpon.aspx.vb">
+      <DependentUpon>BusquedaCLienteArpon.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\ParametrosComiCC.aspx.designer.vb">
+      <DependentUpon>ParametrosComiCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\ParametrosComiCC.aspx.vb">
+      <DependentUpon>ParametrosComiCC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\TIpoGestionCC.aspx.designer.vb">
+      <DependentUpon>TIpoGestionCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\TIpoGestionCC.aspx.vb">
+      <DependentUpon>TIpoGestionCC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\VisualizaciondeGestiones.aspx.designer.vb">
+      <DependentUpon>VisualizaciondeGestiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\VisualizaciondeGestiones.aspx.vb">
+      <DependentUpon>VisualizaciondeGestiones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Ejecutiva\CrearEjecutiva.aspx.designer.vb">
+      <DependentUpon>CrearEjecutiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Ejecutiva\CrearEjecutiva.aspx.vb">
+      <DependentUpon>CrearEjecutiva.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Ejecutiva\ParametrosComiVentas.aspx.designer.vb">
+      <DependentUpon>ParametrosComiVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Ejecutiva\ParametrosComiVentas.aspx.vb">
+      <DependentUpon>ParametrosComiVentas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\FormaPago\BuscarFacturas.aspx.designer.vb">
+      <DependentUpon>BuscarFacturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\FormaPago\BuscarFacturas.aspx.vb">
+      <DependentUpon>BuscarFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\FormaPago\Pagos.aspx.designer.vb">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\FormaPago\Pagos.aspx.vb">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\FormaPago\TipoPago.aspx.designer.vb">
+      <DependentUpon>TipoPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\FormaPago\TipoPago.aspx.vb">
+      <DependentUpon>TipoPago.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\FormaPago\TipoPOS.aspx.designer.vb">
+      <DependentUpon>TipoPOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\FormaPago\TipoPOS.aspx.vb">
+      <DependentUpon>TipoPOS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\IT\CrearSolicitud.aspx.designer.vb">
+      <DependentUpon>CrearSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\IT\CrearSolicitud.aspx.vb">
+      <DependentUpon>CrearSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\IT\EstadoIT.aspx.designer.vb">
+      <DependentUpon>EstadoIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\IT\EstadoIT.aspx.vb">
+      <DependentUpon>EstadoIT.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\IT\GestionIT.aspx.designer.vb">
+      <DependentUpon>GestionIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\IT\GestionIT.aspx.vb">
+      <DependentUpon>GestionIT.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\IT\HistorialIT.aspx.designer.vb">
+      <DependentUpon>HistorialIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\IT\HistorialIT.aspx.vb">
+      <DependentUpon>HistorialIT.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\IT\RespuestaIT.aspx.designer.vb">
+      <DependentUpon>RespuestaIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\IT\RespuestaIT.aspx.vb">
+      <DependentUpon>RespuestaIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\Perfil\CambiarContraseña.aspx.designer.vb">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\Perfil\CambiarContraseña.aspx.vb">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\AgregarCLientes.aspx.designer.vb">
+      <DependentUpon>AgregarCLientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\AgregarCLientes.aspx.vb">
+      <DependentUpon>AgregarCLientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\GestionCC.aspx.designer.vb">
+      <DependentUpon>GestionCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\GestionCC.aspx.vb">
+      <DependentUpon>GestionCC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\ComisionesCC.aspx.designer.vb">
+      <DependentUpon>ComisionesCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\ComisionesCC.aspx.vb">
+      <DependentUpon>ComisionesCC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Ejecutiva\ComisionesV.aspx.designer.vb">
+      <DependentUpon>ComisionesV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Ejecutiva\ComisionesV.aspx.vb">
+      <DependentUpon>ComisionesV.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\IT\ITPrincipal.aspx.designer.vb">
+      <DependentUpon>ITPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\IT\ITPrincipal.aspx.vb">
+      <DependentUpon>ITPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\CambioContraPreg.aspx.designer.vb">
+      <DependentUpon>CambioContraPreg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\CambioContraPreg.aspx.vb">
+      <DependentUpon>CambioContraPreg.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\Perfil\ConfiguracionPregunta.aspx.designer.vb">
+      <DependentUpon>ConfiguracionPregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\Perfil\ConfiguracionPregunta.aspx.vb">
+      <DependentUpon>ConfiguracionPregunta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\GestionUsuario.aspx.designer.vb">
+      <DependentUpon>GestionUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\GestionUsuario.aspx.vb">
+      <DependentUpon>GestionUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\RegistroUsuario.aspx.designer.vb">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\RegistroUsuario.aspx.vb">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionObjetos.aspx.designer.vb">
+      <DependentUpon>CreacionObjetos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionObjetos.aspx.vb">
+      <DependentUpon>CreacionObjetos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionPregunta.aspx.designer.vb">
+      <DependentUpon>CreacionPregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionPregunta.aspx.vb">
+      <DependentUpon>CreacionPregunta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionParametros.aspx.designer.vb">
+      <DependentUpon>CreacionParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionParametros.aspx.vb">
+      <DependentUpon>CreacionParametros.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\RecuperacionViaCorreo.aspx.designer.vb">
+      <DependentUpon>RecuperacionViaCorreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\RecuperacionViaCorreo.aspx.vb">
+      <DependentUpon>RecuperacionViaCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\RecuperacionViaPregunta.aspx.designer.vb">
+      <DependentUpon>RecuperacionViaPregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\RecuperacionViaPregunta.aspx.vb">
+      <DependentUpon>RecuperacionViaPregunta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionRoles.aspx.designer.vb">
+      <DependentUpon>CreacionRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\CreacionRoles.aspx.vb">
+      <DependentUpon>CreacionRoles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Reportes\FACTURAS_CLIENTES.aspx.designer.vb">
+      <DependentUpon>FACTURAS_CLIENTES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Reportes\FACTURAS_CLIENTES.aspx.vb">
+      <DependentUpon>FACTURAS_CLIENTES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Reportes\REPORTE_RPT.aspx.designer.vb">
+      <DependentUpon>REPORTE_RPT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Reportes\REPORTE_RPT.aspx.vb">
+      <DependentUpon>REPORTE_RPT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.vb">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.vb">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\CC\ModificarCliente.aspx.designer.vb">
+      <DependentUpon>ModificarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\CC\ModificarCliente.aspx.vb">
+      <DependentUpon>ModificarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\WebForm4.aspx.designer.vb">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\WebForm4.aspx.vb">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\Pregunta_seguridad.aspx.designer.vb">
+      <DependentUpon>Pregunta_seguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\Pregunta_seguridad.aspx.vb">
+      <DependentUpon>Pregunta_seguridad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\RecuperarContraseña.aspx.designer.vb">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\RecuperarContraseña.aspx.vb">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Login\Registro.aspx.designer.vb">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Login\Registro.aspx.vb">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="App_Data\Procedimientos.vb" />
+    <Compile Include="Principal.Master.designer.vb">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.vb">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\RolesPermisos.aspx.designer.vb">
+      <DependentUpon>RolesPermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Mantenimiento\RolesPermisos.aspx.vb">
+      <DependentUpon>RolesPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Variables.vb" />
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Formas\Reportes\FACTURAS CLIENTES.rdlc" />
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Principal.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50719</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50719/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

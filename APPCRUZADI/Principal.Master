@@ -1,0 +1,143 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Principal.master.vb" Inherits="APPCRUZADI.Principal" %>
+
+
+
+<!DOCTYPE html>
+
+<html >
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+      <title>Cruzadi</title>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+  <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+    <link href="CSS/4.1.3bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="W3/W3.CSS" rel="stylesheet" />    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link href="CSS/Sesion.css" rel="stylesheet" />
+    <link href="CSS/AdminLTE.css" rel="stylesheet" />
+
+     <asp:ContentPlaceHolder ID="head" runat="server">
+
+
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+      
+                      <form id="form1" runat="server">
+                
+
+    
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          
+
+
+                         
+
+
+     </asp:ContentPlaceHolder>
+      
+
+               </form>
+    
+
+        <script src="JS/Jquery3.3.1.js"></script>
+    <script src="JS/Jquery3.2.1.js"></script>
+    <script src="JS/4.1.3bootstrap.min.js"></script>
+    <script src="JS/3.3.7bootstrap.min.js"></script>
+    <script src="JS/Nucleo.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+   <%-- onkeypress="return Letras(event)"--%>
+    <script>
+       //Para buscar
+
+$(document).ready(function(){
+  $("#Buscar").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+        //No permite Espacio
+        function Espacio(campo, event) {
+
+            CadenaaReemplazar = " ";
+            CadenaReemplazo = "";
+            CadenaTexto = campo.value;
+            CadenaTextoNueva = CadenaTexto.split(CadenaaReemplazar).join(CadenaReemplazo);
+            campo.value = CadenaTextoNueva;
+
+        }
+
+        //No permite doble Espacio
+        function DobleEspacio(campo, event) {
+
+            CadenaaReemplazar = "  ";
+            CadenaReemplazo = " ";
+            CadenaTexto = campo.value;
+            CadenaTextoNueva = CadenaTexto.split(CadenaaReemplazar).join(CadenaReemplazo);
+            campo.value = CadenaTextoNueva;
+
+        }
+
+        // muestra y oculta la contraseña
+             function myFunction(campo) {
+           
+                    var x = document.getElementById(campo);
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+             }
+
+
+        //Solo permite letras
+             function Letras(e) {
+                 tecla = (document.all) ? e.keyCode : e.which;
+
+                 //Tecla de retroceso para borrar, siempre la permite
+                 if (tecla == 8) {
+                     return true;
+                 }
+
+                 // Patron de entrada, en este caso solo acepta  letras
+                 patron = /[A-Z a-z]/;
+                 tecla_final = String.fromCharCode(tecla);
+                 return patron.test(tecla_final);
+             }
+
+
+        //// no permite copiar ni pegar 
+             window.onload = function () {
+                 var myInput = //document.getElementById('bloquear');
+                document.getElementsByClassName('prueba')
+                 myInput.onpaste = function (e) {
+                     e.preventDefault();
+                     alert("esta acción está prohibida");
+                 }
+
+                 myInput.oncopy = function (e) {
+                     e.preventDefault();
+                     alert("esta acción está prohibida");
+                 }
+             }
+        </script>
+
+
+
+ 
+        </body>
+</html>

@@ -1,0 +1,373 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.Master.vb" Inherits="APPCRUZADI.Site1" %>
+
+
+<!DOCTYPE html>
+
+<html >
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+      <title>Cruzadi</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <link href="CSS/4.1.3bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="W3/W3.CSS" rel="stylesheet" />
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+     <asp:ContentPlaceHolder ID="head" runat="server">
+
+         <style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+         </style>
+  
+  
+
+
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+ <!-- Navbar -->
+    
+  <div class=" w3-top">
+    <div class="w3-bar w3-deep-orange">
+
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-deep-orange" href="javascript:void(0);" onclick="barra()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a runat="server" id="Inicio" href="~/inicio.aspx" class="w3-bar-item w3-button w3-padding-large  w3-theme-d4 w3-white"><i class="fa fa-home w3-margin-right"></i>Inicio</a>
+       <%-- Clientes --%>
+         <div class="w3-dropdown-hover w3-hide-small">
+            <button runat="server" id="btnClientes" class="w3-button" title="Clientes"><i class="material-icons">&#xe7fb </i>  Clientes <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+                <a runat="server" id="AgregarC" href="~/Formas/CC/AgregarCLientes.aspx" class="w3-bar-item w3-button"><i class="fa fa-plus-square-o"></i>  Agregar</a>
+                <a runat="server" id="ModificarC" href="~/Formas/CC/ModificarCliente.aspx" class="w3-bar-item w3-button"><i class="fa fa-rotate-left"></i>  Modificar</a>
+                <a runat="server" id="GestionarC" href="~/Formas/CC/GestionCC.aspx" class="w3-bar-item w3-button"><i class="fa fa-address-card"></i>  Gestionar</a>
+              <a runat="server" id="ParameComisionesC" href="~/Formas/CC/ParametrosComiCC.aspx" class="w3-bar-item w3-button">  Parametros Comisiones</a>
+                 <a runat="server" id="VisualizacionCC" href="~/Formas/CC/VisualizaciondeGestiones.aspx" class="w3-bar-item w3-button">  Visualizacion de Gestion</a>
+              
+              
+                        </div>
+        </div>
+            <%-- Comisiones --%>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button  runat="server"  id="btnComisiones" class="w3-button" title="Comisiones"><i class="fa fa-money"></i>  Comisiones <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+                <a  id ="comisionesV" runat="server" href="~/Formas/Ejecutiva/ComisionesV.aspx" class="w3-bar-item w3-button"><i class="fa fa-money"></i> <i class="fa fa-cart-plus"></i>  Ejecutiva</a>
+                <a id ="comisionesCC"  runat="server" href="~/Formas/CC/ComisionesCC.aspx" class="w3-bar-item w3-button"><i class="fa fa-money"></i> <i class="fa fa-credit-card"></i>  Credito</a>
+                   </div>
+                    </div>
+          <%-- Ejecutiva --%>
+             <div class="w3-dropdown-hover w3-hide-small">
+            <button  runat="server"  id="BtnEjecutiva" class="w3-button" title="Ejecutiva"><i class="fa fa-money"></i>  Ejecutiva <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+                <a  id ="EjeCrearEje" runat="server" href="~/Formas/Ejecutiva/CrearEjecutiva.aspx" class="w3-bar-item w3-button"><i class="fa fa-money"></i> <i class="fa fa-cart-plus"></i>  Crear Ejecutiva</a>
+                <a id ="EjeParameComiVentas"  runat="server" href="~/Formas/Ejecutiva/ParametrosComiVentas.aspx" class="w3-bar-item w3-button"> Parametro Comisiones</a>
+               
+          </div>
+                    </div>
+
+                  <%--Forma de Pago --%>
+             <div class="w3-dropdown-hover w3-hide-small">
+            <button  runat="server"  id="BtnPago" class="w3-button" title="Pago"><i class="fa fa-money"></i>  Pago <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+               
+                <a id ="FBuscarFactura"  runat="server" href="~/Formas/FormaPago/BuscarFacturas.aspx" class="w3-bar-item w3-button"> Buscar Facturas</a>
+                    <a id ="FPagos"  runat="server" href="~/Formas/FormaPago/Pagos.aspx" class="w3-bar-item w3-button"> Pagos</a>
+                         <a  id ="FTipopago" runat="server" href="~/Formas/FormaPago/TipoPago.aspx" class="w3-bar-item w3-button"><i class="fa fa-money"></i>  Tipo Pago</a>
+                <a id ="FTipoPOS"  runat="server" href="~/Formas/FormaPago/TipoPOS.aspx" class="w3-bar-item w3-button"> Tipo POS</a>
+                     </div>
+                    </div>
+
+          <%-- Mantenimiento --%>
+
+
+          <div class="w3-dropdown-hover w3-hide-small">
+            <button runat="server" id="btnMantenimiento" class="w3-button" title="Mantenimiento"><i class="fa fa-gear fa-spin" style="font-size:24px"></i> Mantenimiento <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+                <a runat="server" id="MObjetos" href="~/Formas/Mantenimiento/CreacionObjetos.aspx" class="w3-bar-item w3-button"> Creacion de  Objetos</a>
+               <a runat="server" id="MParametros" href="~/Formas/Mantenimiento/CreacionParametros.aspx" class="w3-bar-item w3-button"> Creacion de Parametros</a>
+                <a runat="server" id="MPreguntas" href="~/Formas/Mantenimiento/CreacionPregunta.aspx" class="w3-bar-item w3-button"> Creacion de Pregunta</a>
+                <a runat="server" id="MRoles" href="~/Formas/Mantenimiento/CreacionRoles.aspx" class="w3-bar-item w3-button">  Creacion de Roles</a>
+                <a runat="server" id="MRegistrarU" href="~/Formas/Mantenimiento/RegistroUsuario.aspx" class="w3-bar-item w3-button">  Registrar Usuario</a>
+                <a runat="server" id="MGestionU" href="~/Formas/Mantenimiento/GestionUsuario.aspx" class="w3-bar-item w3-button">  Gestion Usuario</a>
+                <a  runat="server" id="MRPermisos" href="~/Formas/Mantenimiento/RolesPermisos.aspx" class="w3-bar-item w3-button">  Permisos a roles</a>
+            </div>
+        </div>
+
+          <%--Soporte--%>
+            <div class="w3-dropdown-hover w3-hide-small">
+            <button runat="server" id="BtnSoporteIT" class="w3-button" title="IT"><i class="material-icons" style="font-size:24px">computer</i>  Soporte-IT <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+                <a runat="server" id="ITGestion" href="~/Formas/IT/GestionIT.aspx" class="w3-bar-item w3-button"> Mantenimiento Gestion</a>
+               <a runat="server" id="ITEstado" href="~/Formas/IT/EstadoIT.aspx" class="w3-bar-item w3-button"> Mantenimiento Estado</a>
+                <a runat="server" id="ITPrincipal" href="~/Formas/IT/ITPrincipal.aspx" class="w3-bar-item w3-button"> IT Principal</a>
+                <a runat="server" id="ITHistorial" href="~/Formas/IT/HistorialIT.aspx" class="w3-bar-item w3-button"> Historial IT</a>
+         
+            </div>
+        </div>
+   
+          <%-- Reportes --%>
+         <a runat="server" id="Reportes" href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"><i class="fa fa-file-text"></i>  Reportes</a>
+     <a href="~/Formas/IT/CrearSolicitud.aspx"   runat="server" id="CrearSolicitud" class="w3-bar-item   w3-button w3-hide-small w3-padding-large w3-hover-white" title="Mensajes a IT"  ><i class="fa fa-envelope"></i>  Solicitud a IT</a>
+        
+          <%-- <a href="#ModalIT"  data-toggle="modal"runat="server" id="A2" class="w3-bar-item   w3-button w3-hide-small w3-padding-large w3-hover-white" title="Mensajes a IT"  ><i class="fa fa-envelope"></i>  IT</a>
+ --%>
+          <%-- Perfil--%>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button runat="server" id="btnPerfil" class="w3-button" title="Perfil"><i class="glyphicon glyphicon-user" style="font-size:24px"></i>  Perfil <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-light-orange">
+                <a runat="server" id="PCambioContraseña" href="~/Formas/login/Perfil/CambiarContraseña.aspx" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Cambiar Contraseña</a>
+                <a runat="server" id="PConfigPregunta" href="~/Formas/login/Perfil/ConfiguracionPregunta.aspx" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Configuracion de preguntas</a>
+              <a runat="server"  id="CerraSesion" href="~/Login.aspx" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Cerrar Sesion</a>
+            
+            </div>
+        </div>         
+       </div>
+    </div>
+        
+  
+    
+    
+  <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+
+       <a runat="server" href="~/Formas/CC/AgregarCLientes.aspx" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-plus-square-o"></i>  Agregar Cliente</a> 
+      <a  runat="server" href="~/Formas/CC/ModificarCliente.aspx" class="w3-bar-item w3-button w3-padding-large"><i class="	fa fa-rotate-left"></i>  Modificar Cliente</a>
+       <a runat="server" href="~/Formas/CC/GestionCC.aspx" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-address-card"></i>  Gestionar Cliente</a>
+
+    <a runat="server" href="~/Formas/Ejecutiva/EjecutivaV.aspx" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-money"></i>  <i class="fa fa-cart-plus"></i>  Comisiones Ejecutiva</a>
+    <a runat="server" href="~/Formas/Ejecutiva/EjecutivaCC.aspx" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-money"></i>  <i class="fa fa-credit-card"></i>  Comisiones Credito</a>
+      
+    <a runat="server" href="#" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-file-text"></i>  Reportes</a>
+      <a runat="server" data-target="#ModalIT" class="w3-bar-item w3-button w3-padding-large" data-toggle="modal"><i class="fa fa-envelope"></i>  IT</a>
+            
+  </div>
+      <!-- Navbar on small screens -->
+<%--  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>--%>
+
+
+
+      
+                      <form id="form1" runat="server">
+                
+
+    
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+               
+
+
+     </asp:ContentPlaceHolder>
+      
+
+               </form>
+                                              <!-- Footer -->
+<footer class="w3-container  w3-center w3-opacity" style="padding:1px" >  
+ <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalIT">
+	Abrir modal
+     </button>
+ <a href="~/#ModalIT"  runat="server"   data-toggle="modal" id="A3" class="w3-bar-item   w3-button w3-hide-small w3-padding-large w3-hover-white" title="Mensajes a IT"  ><i class="fa fa-envelope"></i>  IT</a>
+  
+    <%--  <div class="w3-xlarge " style="padding:1px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+
+ </div>--%>
+
+</footer>
+
+    
+
+     
+
+ 
+
+
+
+    
+    <script src="JS/Jquery3.2.1.js"></script>
+         <script src="JS/Jquery3.3.1.js"></script>
+        <script src="JS/3.3.7bootstrap.min.js"></script>
+    <%--<script src="JS/bootstrap.js"></script>--%>
+    <script src="JS/4.1.3bootstrap.min.js"></script>
+    <script src="JS/Chart.js"></script>
+       <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+--%>
+
+    
+        </body>
+
+    
+   <%-- onkeypress="return Letras(event)"--%>
+    <script>
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function barra() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+
+//Para buscar
+
+$(document).ready(function(){
+  $("#Buscar").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+        //No permite Espacio
+        function Espacio(campo, event) {
+
+            CadenaaReemplazar = " ";
+            CadenaReemplazo = "";
+            CadenaTexto = campo.value;
+            CadenaTextoNueva = CadenaTexto.split(CadenaaReemplazar).join(CadenaReemplazo);
+            campo.value = CadenaTextoNueva;
+
+        }
+
+        //No permite doble Espacio
+        function DobleEspacio(campo, event) {
+
+            CadenaaReemplazar = "  ";
+            CadenaReemplazo = " ";
+            CadenaTexto = campo.value;
+            CadenaTextoNueva = CadenaTexto.split(CadenaaReemplazar).join(CadenaReemplazo);
+            campo.value = CadenaTextoNueva;
+
+        }
+
+        // muestra y oculta la contraseña
+             function myFunction(campo) {
+           
+                    var x = document.getElementById(campo);
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+             }
+
+
+        //Solo permite letras
+             function Letras(e) {
+                 tecla = (document.all) ? e.keyCode : e.which;
+
+                 //Tecla de retroceso para borrar, siempre la permite
+                 if (tecla == 8) {
+                     return true;
+                 }
+
+                 // Patron de entrada, en este caso solo acepta  letras
+                 patron = /[A-Z a-z]/;
+                 tecla_final = String.fromCharCode(tecla);
+                 return patron.test(tecla_final);
+             }
+
+             //Solo permite Numeros
+             function Numeros(e) {
+                 tecla = (document.all) ? e.keyCode : e.which;
+
+                 //Tecla de retroceso para borrar, siempre la permite
+                 if (tecla == 8) {
+                     return true;
+                 }
+
+                 // Patron de entrada, en este caso solo acepta  Numeros
+                 patron = /[0-9]/;
+                 tecla_final = String.fromCharCode(tecla);
+                 return patron.test(tecla_final);
+             }
+
+        //// no permite copiar ni pegar 
+             window.onload = function () {
+                 var myInput = //document.getElementById('bloquear');
+                document.getElementsByClassName('prueba')
+                 myInput.onpaste = function (e) {
+                     e.preventDefault();
+                     alert("esta acción está prohibida");
+                 }
+
+                 myInput.oncopy = function (e) {
+                     e.preventDefault();
+                     alert("esta acción está prohibida");
+                 }
+             }
+
+        //filtra solo decimales
+function filterFloat(evt,input){
+    // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+    var key = window.Event ? evt.which : evt.keyCode;    
+    var chark = String.fromCharCode(key);
+    var tempValue = input.value+chark;
+    if(key >= 48 && key <= 57){
+        if(filter(tempValue)=== false){
+            return false;
+        }else{       
+            return true;
+        }
+    }else{
+          if(key == 8 || key == 13 || key == 0) {     
+              return true;              
+          }else if(key == 46){
+                if(filter(tempValue)=== false){
+                    return false;
+                }else{       
+                    return true;
+                }
+          }else{
+              return false;
+          }
+    }
+}
+function filter(__val__){
+    var preg = /^([0-9]+\.?[0-9]{0,5})$/; 
+    if(preg.test(__val__) === true){
+        return true;
+    }else{
+       return false;
+    }
+    
+}
+
+
+
+        </script>
+ 
+
+</html>
